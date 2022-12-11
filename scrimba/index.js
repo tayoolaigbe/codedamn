@@ -17,18 +17,46 @@ Create a navbar in JSX:
     - Don't worry about styling yet - it'll just be plain-looking HTML for now
 */
 
-const navbar = (
-  <div>
-        <img src="./react-logo.png" width="40px" />
-        <h1>Fun facts about React</h1>
-        <ul>
-            <li>Was first released in 2013</li>
-            <li>Was originally created by Jordan Walke</li>
-            <li>Has well over 100K stars on GitHub</li>
-            <li>Is maintained by Facebook</li>
-            <li>Powers thousands of enterprise apps, including mobile apps</li>
-        </ul>
-    </div>
-)
+function Header() {
+	return (
+		<header>
+			<nav>
+				<img src="./react-logo.png" width="40px" />
+			</nav>
+		</header>
+	);
+}
 
-ReactDOM.render(navbar, document.getElementById("root"))
+function Footer() {
+	return (
+		<footer>
+			<small>© 2021 gidi development. All rights reserved.</small>
+		</footer>
+	);
+}
+
+function Main() {
+	return (
+		<div>
+			<h1>Fun facts about React</h1>
+			<ul>
+				<li>Was first released in 2013</li>
+				<li>Was originally created by Jordan Walke</li>
+				<li>Has well over 100K stars on GitHub</li>
+				<li>Is maintained by Facebook</li>
+				<li>Powers thousands of enterprise apps, including mobile apps</li>
+			</ul>
+		</div>
+	);
+}
+function Page() {
+	return (
+		<div>
+			<Header />
+			<Main />
+			<Footer />
+		</div>
+	);
+}
+
+ReactDOM.render(<Page />, document.getElementById('root'));
